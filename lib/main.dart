@@ -4,11 +4,21 @@ void main() {
   runApp(FirstApp());
 }
 
-class FirstApp extends StatelessWidget {
+class FirstApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return FirstAppState();
+  }
+}
+
+class FirstAppState extends State<FirstApp> {
   var questionIndex = 0;
+
   void AnswerQuestion() {
-    questionIndex = questionIndex + 1;
-    print(questionIndex);
+    setState(() {
+      questionIndex = questionIndex + 1;
+      print(questionIndex);
+    });
   }
 
   @override
