@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() {
   runApp(FirstApp());
 }
@@ -7,17 +9,19 @@ void main() {
 class FirstApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return FirstAppState();
+    return _FirstAppState();
   }
 }
 
-class FirstAppState extends State<FirstApp> {
-  var questionIndex = 0;
+class _FirstAppState extends State<FirstApp> {
+  // '_' in dart marks the sclass as private
+  var _questionIndex = 0; //Marking private by '_'
 
-  void AnswerQuestion() {
+  void _AnswerQuestion() {
+    //Marking private by '_'
     setState(() {
-      questionIndex = questionIndex + 1;
-      print(questionIndex);
+      _questionIndex = _questionIndex + 1;
+      print(_questionIndex);
     });
   }
 
@@ -36,11 +40,11 @@ class FirstAppState extends State<FirstApp> {
         ),
         body: Column(
           children: [
-            Text(questions[questionIndex]),
+            Question(questions[_questionIndex]),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed:
-                  AnswerQuestion, //No parantheesis on the function to execute it as a function and not get a returned value
+                  _AnswerQuestion, //No parantheesis on the function to execute it as a function and not get a returned value
             ),
             RaisedButton(
               child: Text('Answer 2'),
