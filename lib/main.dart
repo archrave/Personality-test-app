@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(FirstApp());
@@ -41,20 +41,9 @@ class _FirstAppState extends State<FirstApp> {
         body: Column(
           children: [
             Question(questions[_questionIndex]),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed:
-                  _AnswerQuestion, //No parantheesis on the function to execute it as a function and not get a returned value
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () {
-                print("Second Answer Selected");
-              },
-            ),
-            RaisedButton(
-                child: Text('Answer 3'),
-                onPressed: () => print('Third Answer Selected')),
+            Answer(),
+            Answer(),
+            Answer(),
           ],
         ),
       ),
