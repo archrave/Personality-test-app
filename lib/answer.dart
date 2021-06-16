@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
+  final VoidCallback selectHandler;
+  final String answerText; //for getting answer text
+  Answer(this.selectHandler, this.answerText);
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       child: RaisedButton(
         color: Colors.purple,
-        child: Text('Answer 1'),
+        textColor: Colors.white,
+        child: Text(answerText),
         onPressed:
-            null, //No parantheesis on the function to execute it as a function and not get a returned value
+            selectHandler, //No parantheesis on the function to execute it as a function and not get a returned value
       ),
     );
   }
