@@ -4,6 +4,7 @@ A basic app project for both Android and IOS built on flutter and dart.
 
 ## Tools
 - Flutter v2.2.1 SDK
+- Dart 2.13.1
 - Editor (VS Code or Android Studio)
 
 ## Instructions
