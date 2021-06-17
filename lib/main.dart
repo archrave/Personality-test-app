@@ -27,6 +27,13 @@ class _FirstAppState extends State<FirstApp> {
     });
   }
 
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final _questions = const [
@@ -70,7 +77,7 @@ class _FirstAppState extends State<FirstApp> {
                 questionI: _questionIndex,
                 answerQues: _AnswerQuestion,
               )
-            : Result(_totalScore),
+            : Result(_totalScore, _resetQuiz),
       ),
     );
   }
