@@ -1,16 +1,12 @@
-# app_one
+# Personality Test App
 
-A new Flutter project.
+A basic app project for both Android and IOS built on flutter and dart.
 
-## Getting Started
+## Tools
+- Flutter v2.2.1 SDK
+- Editor (VS Code or Android Studio)
 
-This project is a starting point for a Flutter application.
+## Instructions
+To run this app on a virtual machine(mobile emulator), your android device or your web browser, just lcone the project, open your terminal inside that folder and use this command: flutter run
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+(Must have flutter in the system PATH and USB Debugging enabled if you're using an Andriod device)
