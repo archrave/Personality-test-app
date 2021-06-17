@@ -31,7 +31,7 @@ class Quiz extends StatelessWidget {
     list) as an argument which we pass to the _AnswerQuestion() function, which basically contains text for answers      */
 
         /* The '...' below is basically turning the whole newly created list into small elements of that list so as to pass those elements
-    in the Column() List since otherwise, we'd pass a list in column list which would create a nested list which is wrong      */
+    in the Column() List since otherwise, we'd pass a list in column list which would create a nested list, which is wrong      */
 
         ...(questions[questionI]['answers'] as List<Map<String, Object>>)
             .map((answer) {
