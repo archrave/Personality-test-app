@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Question extends StatelessWidget {
 //final tells dart that this value wouldnt change after the initialisation in the constructor (a good convention)
   final String questionText;
-  Question(this.questionText); //Short methoda of writing constructor
+  Question(this.questionText); //Short methods of writing constructor
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -14,13 +14,15 @@ class FirstApp extends StatefulWidget {
 }
 
 class _FirstAppState extends State<FirstApp> {
-  // '_' in dart marks the sclass as private
+  // '_' in dart marks the class as private
   var _questionIndex = 0; //Marking private by '_'
-
-  void _AnswerQuestion() {
+  var _totalScore = 0;
+  void _AnswerQuestion(int score) {
     //Marking private by '_'
     setState(() {
       _questionIndex = _questionIndex + 1;
+      _totalScore += score;
+      print("Score: $_totalScore");
       print(_questionIndex);
     });
   }
@@ -31,15 +33,30 @@ class _FirstAppState extends State<FirstApp> {
       // This is a list of maps, each map contains two keys here
       {
         'questionText': 'What\'s your favourite colour?',
-        'answers': ['Green', 'Red', 'Purple', 'Blue']
+        'answers': [
+          {'text': 'Green', 'score': 4},
+          {'text': 'Red', 'score': 7},
+          {'text': 'Purple', 'score': 3},
+          {'text': 'Blue', 'score': 2},
+        ]
       },
       {
         'questionText': 'What\'s your favourite hip hop artist?',
-        'answers': ['Green', 'Red', 'Purple', 'Blue']
+        'answers': [
+          {'text': 'Kanye West', 'score': 4},
+          {'text': 'XXXTentacion', 'score': 7},
+          {'text': 'Kenrick Lamar', 'score': 2},
+          {'text': 'Eminem', 'score': 9},
+        ]
       },
       {
         'questionText': 'What\'s your favourite game?',
-        'answers': ['Skyrim', 'Minecraft', 'Dark Souls', 'Half Life']
+        'answers': [
+          {'text': 'Skyrim', 'score': 1},
+          {'text': 'Minecraft', 'score': 8},
+          {'text': 'Dark Souls', 'score': 7},
+          {'text': 'Half Life', 'score': 3},
+        ]
       },
     ];
     return MaterialApp(
@@ -53,7 +70,7 @@ class _FirstAppState extends State<FirstApp> {
                 questionI: _questionIndex,
                 answerQues: _AnswerQuestion,
               )
-            : Result(),
+            : Result(_totalScore),
       ),
     );
   }

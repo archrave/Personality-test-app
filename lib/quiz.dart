@@ -5,7 +5,7 @@ import './answer.dart';
 class Quiz extends StatelessWidget {
   List<Map<String, Object>> questions;
   int questionI;
-  final VoidCallback answerQues;
+  final Function answerQues;
   Quiz({
     required this.questions,
     required this.questionI,
@@ -33,8 +33,10 @@ class Quiz extends StatelessWidget {
         /* The '...' below is basically turning the whole newly created list into small elements of that list so as to pass those elements
     in the Column() List since otherwise, we'd pass a list in column list which would create a nested list which is wrong      */
 
-        ...(questions[questionI]['answers'] as List<String>).map((answer) {
-          return Answer(answerQues, answer);
+        ...(questions[questionI]['answers'] as List<Map<String, Object>>)
+            .map((answer) {
+          return Answer(() => answerQues(answer['score']),
+              answer['text'] as String); //As string added
         }).toList()
         //Answer(_AnswerQuestion),
         //Answer(_AnswerQuestion),
