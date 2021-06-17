@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  final VoidCallback selectHandler;
+  final VoidCallback
+      selectHandler; //same as final Function selectHandler to store function pointer
   final String answerText; //for getting answer text
   Answer(this.selectHandler, this.answerText);
   @override
