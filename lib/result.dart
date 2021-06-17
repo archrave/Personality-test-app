@@ -6,13 +6,13 @@ class Result extends StatelessWidget {
   Result(this.resultScore, this.resetHandler);
   String get resultPhrase {
     String resultText;
-    if (resultScore > 22) {
+    if (resultScore > 24) {
       resultText = "You should try out new things";
-    } else if (resultScore >= 20 && resultScore <= 22)
+    } else if (resultScore >= 24 && resultScore <= 16)
       resultText = "You have interesting tastes.";
-    else if (resultScore >= 15 && resultScore < 20)
+    else if (resultScore >= 16 && resultScore < 24)
       resultText = "You have good tastes!";
-    else if (resultScore >= 10 && resultScore < 15)
+    else if (resultScore > 8 && resultScore < 16)
       resultText = "You're pretty cool!";
     else
       resultText = "You\'re too awesome!";
@@ -31,6 +31,7 @@ class Result extends StatelessWidget {
           ),
           FlatButton(
             child: Text('Restart Quiz'),
+            textColor: Colors.purple,
             onPressed: resetHandler,
           ),
         ],
